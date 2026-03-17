@@ -1,0 +1,16 @@
+@localhost=localhost:4004/odata/v4/main
+
+
+GET  http://{{localhost}}/SalesOrderHeaders
+Content-Type: application/json
+
+
+###
+POST   http://localhost:4004/odata/v4/main/SalesOrderHeaders
+Content-Type: application/json
+
+ 
+
+###
+DELETE http://localhost:4004/odata/v4/main/SalesOrderHeaders(4937c3ff-3020-4dea-8f90-43b35ead2974)
+Content-Type: application/json
