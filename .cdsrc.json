@@ -1,0 +1,11 @@
+{
+
+    "[development]": {
+        "requires": {
+            "credencials": {
+                "database": "memory"
+            },
+            "kind": "sqlite" 
+        }
+    }
+}
