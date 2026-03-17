@@ -1,7 +1,7 @@
 {
   "name": "sales-order-backend1",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
+  "description": "Project for sales order backend",
   "repository": "<Add repository URL here>",
   "license": "UNLICENSED",
   "private": true,
