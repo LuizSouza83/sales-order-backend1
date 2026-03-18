@@ -1,0 +1,39 @@
+@localhost=localhost:4004/odata/v4/main
+@id=4e8a1c2d-9f73-4b6e-a5d1-3c7f8b2e0a91
+@customer_id=a2d5f7c9-6b14-4e3a-9c2f-8d1b7e5a0c66
+
+@product_id=d9c3b6a1-2f8e-4d7b-9a5c-1e7f0b2a4d88
+
+
+GET  http://{{localhost}}/Products
+Content-Type: application/json
+
+
+###
+POST   http://{{localhost}}/Products
+Content-Type: application/json
+
+  {
+      "id": "{{product_id}}",
+      "name": "produto 001",
+      "price": 100.00
+    }
+
+###
+DELETE http://{{localhost}}/Products(id={{product_id}})
+Content-Type: application/json
+
+###
+PATCH  http://{{localhost}}/Products(id={{product_id}})
+Content-Type: application/json
+
+{
+   "totalAmount": 250.99
+}
+
+
+###
+GET  http://{{localhost}}/Products?$filter=id eq {{product_id}} 
+Content-Type: application/json
+
+###
