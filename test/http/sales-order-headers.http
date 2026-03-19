@@ -65,3 +65,29 @@ Content-Type: application/json
 ###
 GET  http://{{localhost}}/SalesOrderHeaders?$select=id,totalAmount,createdBy&$filter=createdBy eq 'Luiz@example.com'&$expand=items
 Content-Type: application/json
+
+
+# descobrindo  total de ordens
+###
+
+GET  http://{{localhost}}/SalesOrderHeaders/$count
+Content-Type: application/json
+
+
+#skip e top
+
+###
+GET  http://{{localhost}}/SalesOrderHeaders?$skip=5&$top=7
+Content-Type: application/json
+
+
+
+###
+GET  http://{{localhost}}/SalesOrderHeaders?$search=Luiz
+Content-Type: application/json
+
+
+
+###
+GET  http://{{localhost}}/SalesOrderHeaders?$orderby=totalAmount desc
+Content-Type: application/json
