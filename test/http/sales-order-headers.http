@@ -10,7 +10,7 @@ Content-Type: application/json
 
 
 ###
-POST   http://{{localhost}}/SalesOrderHeaders
+PUT    http://{{localhost}}/SalesOrderHeaders
 Content-Type: application/json
 
  {
@@ -22,15 +22,15 @@ Content-Type: application/json
         "id": "c1a7f9d4-3e2b-4f6a-8c91-2d7e5b0a9f13",
         "header_id": "{{id}}",
         "product_id": "{{product_id}}",
-        "quantity": 50,
-        "price": 9.10 
+        "quantity": 750,
+        "price": 1000.00 
     },
     {
         "id": "7b9e2c6a-1f4d-4a88-b3e7-6c2f9d1a5e44",
         "header_id": "{{id}}",
         "product_id": "{{product_id}}",
-        "quantity": 50,
-        "price": 10.20 
+        "quantity": 100,
+        "price": 2000 
     }
   ]
  }
@@ -53,3 +53,15 @@ GET  http://{{localhost}}/SalesOrderHeaders?$filter=id eq {{id}}&$expand=items
 Content-Type: application/json
 
 ###
+GET  http://{{localhost}}/SalesOrderHeaders?$filter=id eq {{id}}&$expand=customer,items($filter=quantity gt 150;$expand=product)
+Content-Type: application/json
+
+
+###
+GET  http://{{localhost}}/SalesOrderHeaders?&$expand=customer,items($filter=price gt 100;$expand=product)
+Content-Type: application/json
+
+
+###
+GET  http://{{localhost}}/SalesOrderHeaders?$select=id,totalAmount,createdBy&$filter=createdBy eq 'Luiz@example.com'&$expand=items
+Content-Type: application/json
