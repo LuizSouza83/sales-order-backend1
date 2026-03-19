@@ -58,7 +58,7 @@ Content-Type: application/json
 
 
 ###
-GET  http://{{localhost}}/SalesOrderHeaders?&$expand=customer,items($filter=price gt 100;$expand=product)
+GET  http://{{localhost}}/SalesOrderHeaders?&$expand=customer,items($filter=price gt 100;$expand=product) d
 Content-Type: application/json
 
 
